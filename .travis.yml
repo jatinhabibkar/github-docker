@@ -1,3 +1,4 @@
+language: node_js
 sudo: required
 services:
   - docker
@@ -6,5 +7,5 @@ before_install:
   - docker build -t dockerdeployjatin/github-docker -f Dockerfile.dev . 
 
 script:
-  - docker run dockerdeployjatin/github-docker npm run test -- --coverage
+  - docker run dockerdeployjatin/github-docker npm run test -- --watchAll=false --coverage
   
